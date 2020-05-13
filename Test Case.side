@@ -1,0 +1,187 @@
+{
+  "id": "7d080c0c-159a-4032-b459-9b230d7a00e2",
+  "version": "2.0",
+  "name": "Test Case",
+  "url": "https://www.organizze.com.br/",
+  "tests": [{
+    "id": "b33d0f5b-c364-4c20-ad6c-7ee3689dbdfb",
+    "name": "Test Case",
+    "commands": [{
+      "id": "f72db8d8-a4de-4bbc-b789-1349568f47e4",
+      "comment": "01. Access the URL",
+      "command": "open",
+      "target": "https://www.organizze.com.br/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ed7cc87-19b2-47ae-b053-7be587e4c2d0",
+      "comment": "02. Click on Cadastre-se",
+      "command": "click",
+      "target": "linkText=Cadastre-se",
+      "targets": [
+        ["linkText=Cadastre-se", "linkText"],
+        ["css=.btn-transparent-gray", "css:finder"],
+        ["xpath=//a[contains(text(),'Cadastre-se')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cadastre-se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "417c1c83-f2fa-4973-ad7b-cc8ca2c65150",
+      "comment": "03. Select Organizar as minhas Finanças option",
+      "command": "click",
+      "target": "css=.green > span",
+      "targets": [
+        ["css=.green > span", "css:finder"],
+        ["xpath=//div[@id='finance-goal']/div/div/div/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Organizar as minhas finanças')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "016ca505-4d5f-425a-8188-525d21a1fb9c",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='signup__form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49cf960b-0ec8-4561-a50f-66f89875d74a",
+      "comment": "generates first snippet of email randomly",
+      "command": "executeScript",
+      "target": "return Math.random()",
+      "targets": [],
+      "value": "email_random"
+    }, {
+      "id": "3a80b6e3-0ba6-4801-a61a-cf216a906f3d",
+      "comment": "04. Fill in random email",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='signup__form']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${email_random}@gmail.com"
+    }, {
+      "id": "d558226d-d007-4a40-b52f-4495ad106d0e",
+      "comment": "05. Fill in password",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='signup__form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "testaut2020"
+    }, {
+      "id": "1bcb49f6-4f39-4069-8baa-72ff5636d900",
+      "comment": "06. Fill in password confirmation",
+      "command": "type",
+      "target": "id=passwordConfirmation",
+      "targets": [
+        ["id=passwordConfirmation", "id"],
+        ["name=passwordConfirmation", "name"],
+        ["css=#passwordConfirmation", "css:finder"],
+        ["xpath=//input[@id='passwordConfirmation']", "xpath:attributes"],
+        ["xpath=//form[@id='signup__form']/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "testaut2020"
+    }, {
+      "id": "09b7de0a-f8fd-4277-8140-75df5456f319",
+      "comment": "07. Check the Li e concordo com os termos de uso option",
+      "command": "click",
+      "target": "id=termsOfUse",
+      "targets": [
+        ["id=termsOfUse", "id"],
+        ["name=termsOfuse", "name"],
+        ["css=#termsOfUse", "css:finder"],
+        ["xpath=//input[@id='termsOfUse']", "xpath:attributes"],
+        ["xpath=//form[@id='signup__form']/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e468aaa7-ec19-444a-b38e-612061ebe15d",
+      "comment": "08. Click on Começar a usar",
+      "command": "click",
+      "target": "css=#signup__form > .btn",
+      "targets": [
+        ["css=#signup__form > .btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='signup__form']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Começar a usar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8ddb667-c53d-448c-a7ad-57223536da8f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-3",
+      "targets": [
+        ["css=.mb-3", "css:finder"],
+        ["xpath=//div[2]/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Parabéns! O Organizze já está preparado para você!')]", "xpath:innerText"]
+      ],
+      "value": "Parabéns! O Organizze já está preparado para você!"
+    }, {
+      "id": "745d5ed5-9b65-4e5e-8160-c64f3c4c9d31",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mb-5",
+      "targets": [
+        ["css=.mb-5", "css:finder"],
+        ["xpath=//div[5]/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Enviamos um e-mail para sua caixa de entrada. Confirme seu cadastro para receber um e-mail importante da nossa equipe.')]", "xpath:innerText"]
+      ],
+      "value": "Enviamos um e-mail para sua caixa de entrada. Confirme seu cadastro para receber um e-mail importante da nossa equipe."
+    }, {
+      "id": "b93bdd15-6514-44a7-b63e-79b44d397b26",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ok, começar agora",
+      "targets": [
+        ["linkText=Ok, começar agora", "linkText"],
+        ["css=.signup__success-box > .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Ok, começar agora')]", "xpath:link"],
+        ["xpath=//a[@href='http://app.organizze.com.br/welcome/new']", "xpath:href"],
+        ["xpath=//div[2]/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ok, começar agora')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7549242d-7ca4-4539-b6ed-780bdc943219",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "6538c2fa-2e7e-431f-99cd-6b739e3e15e7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b33d0f5b-c364-4c20-ad6c-7ee3689dbdfb"]
+  }],
+  "urls": ["https://www.google.com/", "https://www.organizze.com.br/"],
+  "plugins": []
+}
